@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+         background-image: url(https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png);
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+        }
+        nav{
+            width: 100%;
+            height: 200px;
+            border: solid1px black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        a{
+            text-decoration: none;
+            margin-right: 50px;
+            padding-top: 100px;
+            color: black;
+            font-size: 30px;
+        }
+        #cont2{
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        grid-gap: 20px;
+      }
+      #cont2>input{
+        font-size: 15px;
+        width: 200px;
+        color: black;
+      }
+      #cont2>button{
+        font-size: 15px;
+        width: 200px;
+      }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div>
+          <a href="./index.html">Home</a>
+          <a href="./login.html">Login</a>
+          <a href="./signup.html">SignUp</a>
+        </div>
+      </nav>
+  
+      <div id="cont2">
+        <input placeholder="Enter Your Name" type="text" id="name">
+        <input placeholder="Enter Mobile No." type="Number" id="number">
+        <input placeholder="Enter Your Email" type="email" id="email">
+        <input placeholder="Set Password" type="password" id="password">
+        <button id="signup">Sign Up</button>
+      </div>
+    <div>
+</body>
+</html>
+<script>
+    document.getElementById("signup").addEventListener("click",Signup)
+
+var info=JSON.parse(localStorage.getItem("userinfo")) || [];
+function Signup(){
+   
+  var  name=document.getElementById("name").value
+  var  number=document.getElementById("number").value
+   var  email=document.getElementById("email").value
+   var password=document.getElementById("password").value
+
+   if(name.length==0 ){
+        alert("Please Enter Name");
+   }
+  else if(number.length==0){
+        alert("Please Enter Number");
+   }
+  else if(email.length==0 ){
+        alert("Please Enter Email");
+   }
+ else if(password.length==0){
+        alert("Please Enter Password");
+   }
+ else{
+   var information={
+     Name:name,
+    Number:number,
+    Email:email,
+    Password:password
+  }; 
+    info.push(information)
+    
+       localStorage.setItem("userinfo",JSON.stringify(info));
+       alert("Account Successfully Created")
+       
+    window.location.href="login.html"
+  }
+ }
+</script>

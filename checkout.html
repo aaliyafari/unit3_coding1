@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+         background-image: url(https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png);
+        background-repeat: no-repeat;
+        }
+        #cont2{
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        grid-gap: 20px;
+      }
+      #cont2>input{
+        font-size: 15px;
+        width: 200px;
+        color: black;
+      }
+      #cont2>button{
+        font-size: 15px;
+        width: 200px;
+      }
+    </style>
+</head>
+<body>
+    <div id="cont2">
+        <input placeholder="Enter Your Door No" type="text" id="name">
+        <input placeholder="Enter Address Line1" type="text" id="name">
+        <input placeholder="Enter Address Line 2" type="text" id="name">
+        <input placeholder="Enter Mobile No." type="Number" id="number">
+    <button onclick="orderPlaced()">Submit</button>
+    </div>
+</body>
+</html>
+<script>
+
+function orderPlaced(){
+alert("Your Order is accepted");
+
+setTimeout(()=>{
+    alert("Your Order is being Cooked ")
+},3000);
+
+setTimeout(()=>{
+    alert("Your Order is Ready ")
+},8000);
+
+setTimeout(()=>{
+    alert("Your Order is out for delivery ")
+},3000);
+
+setTimeout(()=>{
+    alert("Order delivered")
+},12000);
+ }
+</script>

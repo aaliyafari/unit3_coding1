@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            display:flex;
+        }
+
+        #container > div {
+            width:300px;
+            height:200px;
+            border:1px solid blue;
+            margin:20px;
+        }
+
+        #container img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <button onclick = 'window.location.href = "./checkout.html"' >Place Order</button>
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+    let container = document.getElementById('container');
+
+    function showCart() {
+        let orderList = JSON.parse(localStorage.getItem('orderList'));
+
+        orderList.forEach(({img,name,bill}) => {
+            console.log(img,name,bill);
+
+            let container = document.getElementById('container');
+            let div = document.createElement('div');
+
+            let image = document.createElement('img');
+            image.src = img;
+
+            let title = document.createElement('h3');
+            title.innerText = name;
+
+            let price = document.createElement('h4');
+            price.innerText = bill;
+
+            div.append(image,title,price);
+            container.append(div);
+        })
+    }
+    showCart();
+
+
+  
+</script>
